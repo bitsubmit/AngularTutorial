@@ -7,6 +7,7 @@ import {
   EventRouteActivator, EventListResolver, CreateSessionComponent,
   SessionListComponent
 } from './events/index'
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { AppComponent } from './app.component';
 import { EventsAppComponent } from './events-app.component';
 import { ToastrService } from './common/toastr.service';
@@ -27,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Error404Component,
     CreateSessionComponent,
     EventDetailsComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   imports: [
     BrowserModule,
