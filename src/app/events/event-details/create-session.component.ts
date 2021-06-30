@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ISession } from '../shared/index'
+import { ControlContainer, FormControl, FormGroup, Validators } from "@angular/forms";
+import { ISession, restrictedWords } from '../shared/index'
 
 @Component({
     templateUrl: './create-session.component.html',
@@ -42,7 +42,7 @@ export class CreateSessionComponent {
         this.duration = new FormControl('', Validators.required)
         this.level = new FormControl('', Validators.required)
         this.abstract = new FormControl('', [Validators.required,
-        Validators.maxLength(400)])
+        Validators.maxLength(400), restrictedWords(['foo', 'bar'])])
 
         this.newSessionForm = new FormGroup({
             name: this.name,
@@ -63,7 +63,7 @@ export class CreateSessionComponent {
             presenter: formValues.presenter,
             voters: []
         }
-        
+
         console.log(session)
     }
 }
