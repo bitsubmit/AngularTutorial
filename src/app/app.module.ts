@@ -5,7 +5,7 @@ import {
   EventListComponent, EventThumbnailComponent,
   EventService, EventDetailsComponent, CreateEventComponent,
   EventRouteActivator, EventListResolver, CreateSessionComponent,
-  SessionListComponent
+  SessionListComponent, DurationPipe
 } from './events/index'
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { AppComponent } from './app.component';
@@ -29,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateSessionComponent,
     EventDetailsComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
