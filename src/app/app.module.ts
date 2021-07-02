@@ -40,14 +40,20 @@ declare let toastr: Toastr
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EventService, {
-    provide: TOASTR_TOKEN,
-    useValue: toastr
-  }, EventListResolver, EventRouteActivator, AuthService,
+  providers: [EventService,
+    {
+      provide: TOASTR_TOKEN,
+      useValue: toastr
+    },
+    {
+      provide: EventRouteActivator,
+      useClass: EventRouteActivator
+    },
+    EventListResolver, EventRouteActivator, AuthService,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
-    }
+    },
   ],
   bootstrap: [
     AppComponent
