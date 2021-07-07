@@ -6,7 +6,8 @@ import {
   EventListComponent, EventThumbnailComponent,
   EventService, EventDetailsComponent, CreateEventComponent,
   EventRouteActivator, EventListResolver, CreateSessionComponent,
-  SessionListComponent, DurationPipe, UpvoteComponent, VoterService
+  SessionListComponent, DurationPipe, UpvoteComponent, VoterService,
+  LocationValidator
 } from './events/index'
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { AppComponent } from './app.component';
@@ -38,7 +39,8 @@ let jQuery = window['$'];
     SimpleModalComponent,
     ModalTriggerDirective,
     DurationPipe,
-    UpvoteComponent
+    UpvoteComponent,
+    LocationValidator
   ],
   imports: [
     BrowserModule,
