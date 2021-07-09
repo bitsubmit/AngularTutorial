@@ -5,7 +5,7 @@ import { JQ_TOKEN, ModalTriggerDirective } from './common/index';
 import {
   EventListComponent, EventThumbnailComponent,
   EventService, EventDetailsComponent, CreateEventComponent,
-  EventRouteActivator, EventListResolver, CreateSessionComponent,
+  EventResolver, EventListResolver, CreateSessionComponent,
   SessionListComponent, DurationPipe, UpvoteComponent, VoterService,
   LocationValidator
 } from './events/index'
@@ -59,11 +59,7 @@ let jQuery = window['$'];
       provide: JQ_TOKEN,
       useValue: jQuery
     },
-    {
-      provide: EventRouteActivator,
-      useClass: EventRouteActivator
-    },
-    EventListResolver, VoterService, EventRouteActivator, AuthService,
+    EventListResolver, VoterService, EventResolver, AuthService,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
