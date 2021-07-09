@@ -33,6 +33,6 @@ export class EventListComponent implements OnInit {
     }
 
     handleThumbnailClick(event: string){
-        console.log('hej')
+        
     }
 }
