@@ -21,8 +21,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SimpleModalComponent } from './common/index';
 import { HttpClientModule } from '@angular/common/http'
 
-let toastr: Toastr = window['toaster'];
+
 let jQuery = window['$'];
+let toastr: Toastr = window['toastr'];
 
 @NgModule({
   declarations: [
@@ -52,12 +53,12 @@ let jQuery = window['$'];
   ],
   providers: [EventService,
     {
-      provide: TOASTR_TOKEN,
-      useValue: toastr
-    },
-    {
       provide: JQ_TOKEN,
       useValue: jQuery
+    },
+    {
+      provide: TOASTR_TOKEN,
+      useValue: toastr
     },
     EventListResolver, VoterService, EventResolver, AuthService,
     {
